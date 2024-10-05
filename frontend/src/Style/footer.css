@@ -1,0 +1,76 @@
+.footer{
+ color: white;
+ 
+ background-color:rgb(35, 33, 33) ;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 20px;
+ padding: 20px 30px;
+ padding-top: 80px;
+ margin-top: 40px;
+}
+.footer-con{
+    width: 100%;
+    display: grid;
+    grid-template-columns:2fr 1fr 1fr ;
+    gap: 80px;
+}
+.footer-con-left, .footer-con-center, .footer-con-right{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+}
+ .footer li{
+    list-style-type:none;
+    margin-bottom: 10px;
+ }
+ .footer-con-right h2, .footer-con-left h2{
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+ }
+ .footer-social-icon img{
+    width: 40px;
+    margin-right: 15px;
+ }
+ .footer hr{
+    width: 100%;
+    height: 2px;
+    margin: 20px 15px;
+    background-color: grey;
+ }
+ /* App download css styles */
+ .app-con{
+    margin: auto auto;
+    margin-top: 40px;
+    font-size: max(3vw,20px);
+    text-align: center;
+    font-weight:bold;
+}
+.app-download{
+    display: flex;
+    justify-content: center;
+    gap: max(2vw ,10px);
+    margin-top: 40px;
+}
+.app-download img{
+    width: max(30vw,120px);
+    max-width:180px ;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.app-download img:hover{
+    transform: scale(1.3);
+}
+@media(max-width:750px){
+    .footer-con{
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    .footer-copy{
+        text-align: center;
+    }
+}

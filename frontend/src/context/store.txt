@@ -1,0 +1,59 @@
+
+
+import { createContext, useEffect, useState } from "react";
+import { food_list } from "../assets/assets";
+
+export  const Store=createContext(null)
+
+const Storeprovider=(props)=>{
+const [cartItems,setcartItems]=useState({});
+
+const addtocart=(itemId)=>{
+    if(!cartItems[itemId]){
+        setcartItems((prev)=>({...prev,[itemId]:1}))
+    }
+    else{
+        setcartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
+    }
+}
+const removefromcart=(itemId)=>{
+    setcartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+}
+useEffect(()=>{
+    console.log(cartItems);
+
+},[cartItems])
+    const Val={
+        food_list,
+        cartItems,
+        setcartItems,
+        addtocart,
+        removefromcart
+    }
+
+    return (
+        <Store.Provider value={Val}>
+            {props.children}
+        </Store.Provider>
+    )
+}
+
+
+
+export default Storeprovider;
+
+
+
+import { useContext } from 'react';
+import { Store } from './path_to_your_store_file';
+
+const SomeComponent = () => {
+    const { food_list } = useContext(Store);
+
+    return (
+        <div>
+            {/* Use the food_list here */}
+            {food_list.map(food => <p key={food.id}>{food.name}</p>)}
+        </div>
+    );
+};

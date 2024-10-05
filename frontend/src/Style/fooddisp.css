@@ -1,0 +1,19 @@
+.food-disp{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    
+}
+.food-disp h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.food-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+    gap: 20px;
+    row-gap: 50px;
+    column-gap: 5%;
+}
